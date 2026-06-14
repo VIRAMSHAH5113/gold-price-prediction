@@ -1,8 +1,35 @@
-# Gold Price Prediction
+# Gold Price Prediction Dashboard
 
-This project trains a Random Forest model to predict gold prices (`GLD`) using features from the dataset.
+## Live Demo
 
-## Run the project
+https://gold-price-prediction-bgmxvxqcvsgezihjun3cai.streamlit.app/
+
+## GitHub Repository
+
+https://github.com/VIRAMSHAH5113/gold-price-prediction
+
+## Project Overview
+
+This project uses Machine Learning to predict Gold Prices (GLD) based on financial indicators such as:
+
+* SPX
+* USO
+* SLV
+* EUR/USD
+
+The application includes a Streamlit dashboard where users can enter feature values and obtain predicted gold prices.
+
+## Technologies Used
+
+* Python
+* Streamlit
+* Pandas
+* NumPy
+* Scikit-Learn
+* Matplotlib
+* Joblib
+
+## Run the Project
 
 Train the model and generate graphs:
 
@@ -16,7 +43,7 @@ Force retraining and regenerate graphs:
 python main.py --retrain
 ```
 
-Train using the full comparison workflow and regenerate feature importance and model comparison output:
+Train using the full comparison workflow:
 
 ```bash
 python src/train.py
@@ -28,21 +55,19 @@ Run the Streamlit dashboard:
 streamlit run streamlit_app.py
 ```
 
-## Predict with custom input
-
-The prediction script can also accept manual feature values:
+## Predict with Custom Input
 
 ```bash
 python src/predict.py --spx 1500 --uso 80 --slv 16 --eurusd 1.2
 ```
 
-If no custom values are provided, it uses the latest row from `data/gld_price_data.csv`.
+If no custom values are provided, the latest row from `data/gld_price_data.csv` is used.
 
-## Output files
+## Output Files
 
-- `output/gold_price_prediction.png` — gold price trend with the latest prediction.
-- `output/actual_vs_predicted_test_set.png` — actual vs predicted values on the test set.
-- `output/prediction_summary.json` — prediction summary for the latest prediction.
-- `output/feature_importance.png` — feature importance from model training.
-- `output/model_comparison.json` — performance comparison for all trained models.
-- `output/training_metrics.json` — evaluation metrics from training.
+* `output/gold_price_prediction.png`
+* `output/actual_vs_predicted_test_set.png`
+* `output/prediction_summary.json`
+* `output/feature_importance.png`
+* `output/model_comparison.json`
+* `output/training_metrics.json`
